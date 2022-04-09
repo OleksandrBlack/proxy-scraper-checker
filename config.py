@@ -73,6 +73,7 @@ HTTP_SOURCES = (
 	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=http",
 	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=https",
 	"https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt",
+	"https://raw.githubusercontent.com/porthole-ascend-cinnamon/proxy_scraper/main/proxies.txt",
 	
 
 )
@@ -109,6 +110,7 @@ SOCKS4_SOURCES = (
 	"https://proxy-list.org/russian/search.php?search=RU&country=RU&type=any&port=any&ssl=any",
 	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=socks4",
 	"https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt",
+	"https://raw.githubusercontent.com/porthole-ascend-cinnamon/proxy_scraper/main/proxies.txt",
 )
 SOCKS5 = True
 SOCKS5_SOURCES = (
@@ -146,5 +148,6 @@ SOCKS5_SOURCES = (
 	"https://proxy-list.org/russian/search.php?search=RU&country=RU&type=any&port=any&ssl=any",
 	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=socks5",
 	"https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt",
+	"https://raw.githubusercontent.com/porthole-ascend-cinnamon/proxy_scraper/main/proxies.txt",
 	
 )
