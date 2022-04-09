@@ -72,9 +72,6 @@ HTTP_SOURCES = (
 	"https://proxy-list.org/russian/search.php?search=RU&country=RU&type=any&port=any&ssl=any",
 	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=http",
 	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=https",
-	"https://hidemy.name/en/proxy-list/?country=AFALAOARAMBDBZBOBRBGKHCACLCOCWCYCZEGETFRGEDEGTHKHUINIDIRIEITJPKZKEKRLVLYMYMTMXMDMNNPNLNGPKPEPHPLPRRORURSSGZAESCHTWTHTRUAGBUSVEVNVG&maxtime=2000&anon=234#list",
-	"https://hidemy.name/en/proxy-list/?country=AFALAOARAMBDBZBOBRBGKHCACLCOCWCYCZEGETFRGEDEGTHKHUINIDIRIEITJPKZKEKRLVLYMYMTMXMDMNNPNLNGPKPEPHPLPRRORURSSGZAESCHTWTHTRUAGBUSVEVNVG&maxtime=2000&anon=234&start=64#list",
-	"https://hidemy.name/en/proxy-list/?country=AFALAOARAMBDBZBOBRBGKHCACLCOCWCYCZEGETFRGEDEGTHKHUINIDIRIEITJPKZKEKRLVLYMYMTMXMDMNNPNLNGPKPEPHPLPRRORURSSGZAESCHTWTHTRUAGBUSVEVNVG&maxtime=2000&anon=234&start=128#list",
 	"https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt",
 	
 
@@ -95,11 +92,9 @@ SOCKS4_SOURCES = (
 	"https://proxypremium.top/full-proxy-list",
 	"https://pastebin.com/raw/vQzZ8CwG",
 	"https://pastebin.com/raw/vLN81LDa",
-	"https://pastebin.com/raw/1DeAN3xi",
 	"https://raw.githubusercontent.com/sunny9577/proxy-scraper/master/proxies.txt",
 	"https://raw.githubusercontent.com/hendrikbgr/Free-Proxy-Repo/master/proxy_list.txt",
 	"https://raw.githubusercontent.com/almroot/proxylist/master/list.txt",
-	"https://www.my-proxy.com/free-socks-4-proxy.html",
 	"https://spys.me/socks.txt",
 	"https://www.freeproxychecker.com/result/mixed_proxies.txt",
 	"https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks4&timeout=10000&country=all",
@@ -113,9 +108,6 @@ SOCKS4_SOURCES = (
 	"https://socks-proxy.net/",
 	"https://proxy-list.org/russian/search.php?search=RU&country=RU&type=any&port=any&ssl=any",
 	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=socks4",
-	"https://hidemy.name/en/proxy-list/?country=AFALAOARAMBDBZBOBRBGKHCACLCOCWCYCZEGETFRGEDEGTHKHUINIDIRIEITJPKZKEKRLVLYMYMTMXMDMNNPNLNGPKPEPHPLPRRORURSSGZAESCHTWTHTRUAGBUSVEVNVG&maxtime=2000&anon=234#list",
-	"https://hidemy.name/en/proxy-list/?country=AFALAOARAMBDBZBOBRBGKHCACLCOCWCYCZEGETFRGEDEGTHKHUINIDIRIEITJPKZKEKRLVLYMYMTMXMDMNNPNLNGPKPEPHPLPRRORURSSGZAESCHTWTHTRUAGBUSVEVNVG&maxtime=2000&anon=234&start=64#list",
-	"https://hidemy.name/en/proxy-list/?country=AFALAOARAMBDBZBOBRBGKHCACLCOCWCYCZEGETFRGEDEGTHKHUINIDIRIEITJPKZKEKRLVLYMYMTMXMDMNNPNLNGPKPEPHPLPRRORURSSGZAESCHTWTHTRUAGBUSVEVNVG&maxtime=2000&anon=234&start=128#list",
 	"https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt",
 )
 SOCKS5 = True
@@ -137,11 +129,9 @@ SOCKS5_SOURCES = (
 	"https://proxypremium.top/full-proxy-list",
 	"https://pastebin.com/raw/vQzZ8CwG",
 	"https://pastebin.com/raw/vLN81LDa",
-	"https://pastebin.com/raw/1DeAN3xi",
 	"https://raw.githubusercontent.com/sunny9577/proxy-scraper/master/proxies.txt",
 	"https://raw.githubusercontent.com/hendrikbgr/Free-Proxy-Repo/master/proxy_list.txt",
 	"https://raw.githubusercontent.com/almroot/proxylist/master/list.txt",
-	"https://www.my-proxy.com/free-socks-5-proxy.html",
 	"https://spys.me/socks.txt",
 	"https://www.freeproxychecker.com/result/mixed_proxies.txt",
 	"https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks5&timeout=10000&country=all",
@@ -155,9 +145,6 @@ SOCKS5_SOURCES = (
 	"https://socks-proxy.net/",
 	"https://proxy-list.org/russian/search.php?search=RU&country=RU&type=any&port=any&ssl=any",
 	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=socks5",
-	"https://hidemy.name/en/proxy-list/?country=AFALAOARAMBDBZBOBRBGKHCACLCOCWCYCZEGETFRGEDEGTHKHUINIDIRIEITJPKZKEKRLVLYMYMTMXMDMNNPNLNGPKPEPHPLPRRORURSSGZAESCHTWTHTRUAGBUSVEVNVG&maxtime=2000&anon=234#list",
-	"https://hidemy.name/en/proxy-list/?country=AFALAOARAMBDBZBOBRBGKHCACLCOCWCYCZEGETFRGEDEGTHKHUINIDIRIEITJPKZKEKRLVLYMYMTMXMDMNNPNLNGPKPEPHPLPRRORURSSGZAESCHTWTHTRUAGBUSVEVNVG&maxtime=2000&anon=234&start=64#list",
-	"https://hidemy.name/en/proxy-list/?country=AFALAOARAMBDBZBOBRBGKHCACLCOCWCYCZEGETFRGEDEGTHKHUINIDIRIEITJPKZKEKRLVLYMYMTMXMDMNNPNLNGPKPEPHPLPRRORURSSGZAESCHTWTHTRUAGBUSVEVNVG&maxtime=2000&anon=234&start=128#list",
 	"https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt",
 	
 )
