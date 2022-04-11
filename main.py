@@ -24,6 +24,14 @@ import config
 
 
 class Proxy:
+    __slots__ = (
+        "socket_address",
+        "ip",
+        "is_anonymous",
+        "geolocation",
+        "timeout",
+    )
+
     def __init__(self, socket_address: str, ip: str) -> None:
         """
         Args:
@@ -57,6 +65,8 @@ class Proxy:
 
 
 class Folder:
+    __slots__ = ("folder_name", "path", "for_anonymous", "for_geolocation")
+
     def __init__(self, folder_name: str, path: Path) -> None:
         self.folder_name = folder_name
         self.path = path / folder_name
@@ -75,6 +85,20 @@ class Folder:
 
 class ProxyScraperChecker:
     """HTTP, SOCKS4, SOCKS5 proxies scraper and checker."""
+
+    __slots__ = (
+        "path",
+        "all_folders",
+        "enabled_folders",
+        "regex",
+        "sort_by_speed",
+        "timeout",
+        "sources",
+        "proxies",
+        "proxies_count",
+        "c",
+        "sem",
+    )
 
     def __init__(
         self,
@@ -119,13 +143,13 @@ class ProxyScraperChecker:
         if not self.enabled_folders:
             raise ValueError("all folders are disabled in the config")
 
-        regex = r"(?:^|\D)(({0}\.{1}\.{1}\.{1}):{2})(?:\D|$)".format(
+        regex = r"(?:^|\D)?(({0}\.{1}\.{1}\.{1}):{2})(?:\D|$)".format(
             r"(?:[1-9]|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])",  # 1-255
             r"(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])",  # 0-255
             r"(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}"
             + r"|65[0-4]\d{2}|655[0-2]\d|6553[0-5])",  # 0-65535
         )
-        self.regex = re.compile(regex, flags=re.M)
+        self.regex = re.compile(regex)
 
         self.sort_by_speed = sort_by_speed
         self.timeout = timeout
@@ -194,9 +218,7 @@ class ProxyScraperChecker:
                         "http://ip-api.com/json/", timeout=self.timeout
                     ) as r:
                         res = (
-                            None
-                            if r.status in {404, 429}
-                            else await r.json()
+                            None if r.status in {404, 429} else await r.json()
                         )
         except Exception as e:
             # Too many open files
