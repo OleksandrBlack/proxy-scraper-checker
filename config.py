@@ -268,7 +268,7 @@ SOCKS5_SOURCES = (
 	"https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies.txt",
 	"https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/proxy.txt",
 	"https://www.sslproxies.org/#raw",
-	"https://t.me/s/proxiesfine
+	"https://t.me/s/proxiesfine",
 	"https://free-proxy-list.net/anonymous-proxy.html",
 	"https://free-proxy-list.net/uk-proxy.html",
 	"https://www.us-proxy.org/",
