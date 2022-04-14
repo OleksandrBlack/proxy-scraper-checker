@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import asyncio
 import re
+from datetime import datetime
 from pathlib import Path
 from random import shuffle
 from shutil import rmtree
@@ -10,6 +11,7 @@ from typing import Callable, Dict, Iterable, List, Optional, Set, Tuple, Union
 
 from aiohttp import ClientSession
 from aiohttp_socks import ProxyConnector
+from git import Repo, exc
 from rich.console import Console
 from rich.progress import (
     BarColumn,
@@ -101,20 +103,20 @@ class ProxyScraperChecker:
     )
 
     def __init__(
-        self,
-        *,
-        timeout: float,
-        max_connections: int,
-        sort_by_speed: bool,
-        save_path: str,
-        proxies: bool,
-        proxies_anonymous: bool,
-        proxies_geolocation: bool,
-        proxies_geolocation_anonymous: bool,
-        http_sources: Optional[Iterable[str]],
-        socks4_sources: Optional[Iterable[str]],
-        socks5_sources: Optional[Iterable[str]],
-        console: Optional[Console] = None,
+            self,
+            *,
+            timeout: float,
+            max_connections: int,
+            sort_by_speed: bool,
+            save_path: str,
+            proxies: bool,
+            proxies_anonymous: bool,
+            proxies_geolocation: bool,
+            proxies_geolocation_anonymous: bool,
+            http_sources: Optional[Iterable[str]],
+            socks4_sources: Optional[Iterable[str]],
+            socks5_sources: Optional[Iterable[str]],
+            console: Optional[Console] = None,
     ) -> None:
         """HTTP, SOCKS4, SOCKS5 proxies scraper and checker.
 
@@ -172,12 +174,12 @@ class ProxyScraperChecker:
         self.sem = asyncio.Semaphore(max_connections)
 
     async def fetch_source(
-        self,
-        session: ClientSession,
-        source: str,
-        proto: str,
-        progress: Progress,
-        task: TaskID,
+            self,
+            session: ClientSession,
+            source: str,
+            proto: str,
+            progress: Progress,
+            task: TaskID,
     ) -> None:
         """Get proxies from source.
 
@@ -203,19 +205,19 @@ class ProxyScraperChecker:
         progress.update(task, advance=1)
 
     async def check_proxy(
-        self, proxy: Proxy, proto: str, progress: Progress, task: TaskID
+            self, proxy: Proxy, proto: str, progress: Progress, task: TaskID
     ) -> None:
         """Check if proxy is alive."""
         try:
             async with self.sem:
                 start = perf_counter()
                 async with ClientSession(
-                    connector=ProxyConnector.from_url(
-                        f"{proto}://{proxy.socket_address}"
-                    )
+                        connector=ProxyConnector.from_url(
+                            f"{proto}://{proxy.socket_address}"
+                        )
                 ) as session:
                     async with session.get(
-                        "http://ip-api.com/json/", timeout=self.timeout
+                            "http://ip-api.com/json/", timeout=self.timeout
                     ) as r:
                         res = (
                             None if r.status in {404, 429} else await r.json()
@@ -283,16 +285,16 @@ class ProxyScraperChecker:
             folder.create()
             for proto, proxies in sorted_proxies:
                 text = "\n".join(
-                    "{}{}".format(
+                    "{}{}{}".format(
+                        proto + '://',
                         proxy.socket_address,
                         proxy.geolocation if folder.for_geolocation else "",
                     )
                     for proxy in proxies
                     if (proxy.is_anonymous if folder.for_anonymous else True)
                 )
-                (folder.path / f"{proto}.txt").write_text(
-                    text, encoding="utf-8"
-                )
+                with open(folder.path / 'proxies.txt', 'a', encoding='utf-8') as f:
+                    f.write(text + '\n')
 
     async def main(self) -> None:
         await self.fetch_all_sources()
@@ -328,7 +330,7 @@ class ProxyScraperChecker:
 
     @property
     def _sorting_key(
-        self,
+            self,
     ) -> Union[Callable[[Proxy], float], Callable[[Proxy], Tuple[int, ...]]]:
         if self.sort_by_speed:
             return lambda proxy: proxy.timeout
@@ -370,5 +372,43 @@ async def main() -> None:
     ).main()
 
 
+# checking if repo is valid
+try:
+    repo = Repo('./')
+except exc.NoSuchPathError as error:
+    print('Not git repository: {}'.format(error))
+    exit(1)
+
+
+# print repo info
+def print_repository(remote_repo):
+    try:
+        print('\nInfo On Repo')
+        print('Repo Active Branch Is {}'.format(remote_repo.active_branch))
+        for remote in remote_repo.remotes:
+            print('Remote Named "{}" With URL "{}"'.format(remote, remote.url))
+        print('Last Commit For Repo Is {}  at {}.'.format(str(repo.head.commit.hexsha),
+                                                          str(repo.head.commit.committed_datetime)))
+        print('Last Commit For Repo Is {}  at {}.'.format(str(repo.head.commit.message),
+                                                          str(repo.head.commit.committed_datetime)))
+    except AttributeError as e:
+        print('An Exception Occurred In Getting Repository Info: {}'.format(e))
+
+
+# push to repo
+def git_push():
+    CommitMessage = 'Updating proxies ' + datetime.now().strftime("%Y-%h-%d  %H:%M:%S")
+    try:
+        repo.git.add(all=True)
+        repo.index.commit(CommitMessage)
+        origin = repo.remote(name='origin')
+        origin.push()
+        print('Successfully Pushed To Git')
+    except:
+        print('An Exception Cccurred: {}'.format(error))
+
+
 if __name__ == "__main__":
     asyncio.run(main())
+    print_repository(repo)
+    git_push()
