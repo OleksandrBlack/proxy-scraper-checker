@@ -2,6 +2,6 @@ __pycache__/
 proxies_anonymous/
 proxies_geolocation/
 proxies_geolocation_anonymous/
-start.sh
+start.bash
 log.txt
 main.py_

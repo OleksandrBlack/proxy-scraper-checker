@@ -1,0 +1,9 @@
+/bin/sh: 1: conda: not found
+/bin/sh: 1: conda: not found
+/bin/sh: 1: conda: not found
+/bin/sh: 1: conda: not found
+/bin/sh: 1: conda: not found
+/bin/sh: 1: conda: not found
+/bin/sh: 1: conda: not found
+/bin/sh: 1: conda: not found
+/bin/sh: 1: conda: not found
