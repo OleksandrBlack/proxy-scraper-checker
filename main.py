@@ -131,7 +131,7 @@ class ProxyScraperChecker:
         folders_mapping = {
             "proxies": proxies,
             "proxies_anonymous": proxies_anonymous,
-            "proxies_geolocation": proxies_geolocation,
+            # "proxies_geolocation": proxies_geolocation,
             "proxies_geolocation_anonymous": proxies_geolocation_anonymous,
         }
         self.all_folders = [
@@ -285,16 +285,28 @@ class ProxyScraperChecker:
             folder.create()
             for proto, proxies in sorted_proxies:
                 text = "\n".join(
-                    "{}{}{}".format(
+                    "{}{}".format(
                         proto + '://',
                         proxy.socket_address,
-                        proxy.geolocation if folder.for_geolocation else "",
+                        # proxy.geolocation if folder.for_geolocation else "",
                     )
                     for proxy in proxies
                     if (proxy.is_anonymous if folder.for_anonymous else True)
                 )
+                text1 = "\n".join(
+                    "{}{}".format(
+                        proto + '://',
+                        proxy.socket_address,
+                        # proxy.geolocation if folder.for_geolocation else "",
+                    )
+                    for proxy in proxies
+                    if ('Russia' in proxy.geolocation)
+                )
                 with open(folder.path / 'proxies.txt', 'a', encoding='utf-8') as f:
                     f.write(text + '\n')
+                with open(folder.path / 'proxies_ru.txt', 'a', encoding='utf-8') as f:
+                    f.write(text1 + '\n')
+
 
     async def main(self) -> None:
         await self.fetch_all_sources()
