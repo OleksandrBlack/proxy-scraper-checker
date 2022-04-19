@@ -3,7 +3,7 @@
 # How many seconds to wait for the proxy to make a connection.
 # The higher this number, the longer the check will take
 # and the more proxies you will receive.
-TIMEOUT = 5
+TIMEOUT = 8
 
 # Maximum concurrent connections.
 # Don't set higher than 900, please.
@@ -99,6 +99,9 @@ HTTP_SOURCES = (
 	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/http_2.txt",
 	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/http_3.txt",
 	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/http_4.txt",
+	"https://api.good-proxies.ru/getfree.php?type%5Bhttp%5D=on&access%5B%27supportsHttps%27%5D=on&anon%5B%27transparent%27%5D=on&anon%5B%27anonymous%27%5D=on&anon%5B%27elite%27%5D=on&count=100&ping=8000&time=600&works=100&key=freeproxy",
+	"https://proxoid.net/system/core?act=getFreeProxy",
+	"https://coreproxy.online/api/proxy/free",
 )
 
 SOCKS4 = True
@@ -162,7 +165,10 @@ SOCKS4_SOURCES = (
 	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks4.txt",
 	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks4_2.txt",
 	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks4_3.txt",
+	"https://api.good-proxies.ru/getfree.php?type%5Bsocks4%5D=on&anon%5B%27transparent%27%5D=on&anon%5B%27anonymous%27%5D=on&anon%5B%27elite%27%5D=on&count=100&ping=8000&time=600&works=100&reverse=on&country%5B%5D=ua&key=freeproxy",
+	"https://proxoid.net/system/core?act=getFreeProxy",
 )
+
 SOCKS5 = True
 SOCKS5_SOURCES = (
 	"https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5",
@@ -224,4 +230,6 @@ SOCKS5_SOURCES = (
 	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks5.txt",
 	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks5_2.txt",
 	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks5_3.txt",
+	"https://api.good-proxies.ru/getfree.php?type%5Bsocks5%5D=on&anon%5B%27transparent%27%5D=on&anon%5B%27anonymous%27%5D=on&anon%5B%27elite%27%5D=on&count=100&ping=8000&time=600&works=100&reverse=on&country%5B%5D=ua&key=freeproxy",
+	"https://proxoid.net/system/core?act=getFreeProxy",
 )
