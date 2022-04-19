@@ -55,8 +55,8 @@ HTTP_SOURCES = (
 	"https://raw.githubusercontent.com/human1ty/proxy/main/http.txt",
 	"https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt",
 	"https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all",
-	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=http",
-	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=https",
+	"http://api.best-proxies.ru/proxylist.txt?key=developer&type=http",
+	"http://api.best-proxies.ru/proxylist.txt?key=developer&type=https",
 	"https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt",
 	"https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/https.txt",
 	"https://raw.githubusercontent.com/Volodichev/proxy-list/main/http.txt",
@@ -94,6 +94,11 @@ HTTP_SOURCES = (
 	"https://free-proxy-list.net/anonymous-proxy.html",
 	"https://free-proxy-list.net/uk-proxy.html",
 	"https://www.us-proxy.org/",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/all.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/http.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/http_2.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/http_3.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/http_4.txt",
 )
 
 SOCKS4 = True
@@ -113,7 +118,7 @@ SOCKS4_SOURCES = (
 	"https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt",
 	"https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks4.txt",
 	"https://raw.githubusercontent.com/human1ty/proxy/main/socks4.txt",
-	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=socks4",
+	"http://api.best-proxies.ru/proxylist.txt?key=developer&type=socks4",
 	"https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt",
 	"https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks4&timeout=10000&country=all",
 	"https://spys.me/socks.txt",
@@ -153,6 +158,10 @@ SOCKS4_SOURCES = (
 	"https://free-proxy-list.net/uk-proxy.html",
 	"https://www.us-proxy.org/",
 	"https://raw.githubusercontent.com/KUTlime/ProxyList/main/ProxyList.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/all.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks4.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks4_2.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks4_3.txt",
 )
 SOCKS5 = True
 SOCKS5_SOURCES = (
@@ -173,7 +182,7 @@ SOCKS5_SOURCES = (
 	"https://raw.githubusercontent.com/human1ty/proxy/main/socks5.txt",
 	"https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5_RAW.txt",
 	"https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt",
-	"https://api.best-proxies.ru/proxylist.txt?key=developer&type=socks5",
+	"http://api.best-proxies.ru/proxylist.txt?key=developer&type=socks5",
 	"https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks5&timeout=10000&country=all",
 	"https://spys.me/socks.txt",
 	"https://www.socks-proxy.net/",
@@ -211,4 +220,8 @@ SOCKS5_SOURCES = (
 	"https://free-proxy-list.net/anonymous-proxy.html",
 	"https://free-proxy-list.net/uk-proxy.html",
 	"https://raw.githubusercontent.com/KUTlime/ProxyList/main/ProxyList.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/all.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks5.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks5_2.txt",
+	"https://raw.githubusercontent.com/OleksandrBlack/ddoswarlist/main/proxies/proxy_source/socks5_3.txt",
 )
